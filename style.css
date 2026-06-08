@@ -116,8 +116,8 @@
 #avisoEnv{
     position: absolute;
     top: 10%;
-    left: 60%;
-    transform: translate(-90%, -40%);
+    left: 50%;
+    transform: translate(-90%, -50%);
     align-items: center;
 }
 @keyframes spin {
