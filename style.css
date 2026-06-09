@@ -155,9 +155,9 @@
 
 #ponyoCarta {
     position: absolute;
-    top: 65%;
+    top: 70%;
     left: 75%;
-    transform: translate(-35%, -35%);
+    transform: translate(-30%, -25%);
 
     width: 350px;
 }
