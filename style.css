@@ -274,9 +274,9 @@
 
     #ponyoDisco {
         position: absolute;
-        top: 30%;
+        top: 10%;
         left: 60%;
-        transform: translate(-70%, -40%);
+        transform: translate(-90%, -40%);
 
         width: 50px;
         border-radius: 100px;
