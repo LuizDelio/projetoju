@@ -278,7 +278,7 @@
         left: 60%;
         transform: translate(-95%, -40%);
 
-        width: 50px;
+        width: 40px;
         border-radius: 100px;
         animation: spin 2s linear infinite;
         background-color: #000;
