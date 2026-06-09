@@ -69,3 +69,21 @@ abrir.addEventListener("click", (e) => {
         window.location.href = "carta.html";
     }, 800);
 });
+
+document.getElementById("enviar").addEventListener("click", () => {
+
+    const opcao =
+        document.querySelector('input[name="opiniao"]:checked');
+
+    const comentario =
+        document.getElementById("comentario").value;
+
+    if (!opcao) {
+        alert("Escolha uma opção.");
+        return;
+    }
+
+    alert(
+        `Resposta: ${opcao.value}\nComentário: ${comentario}`
+    );
+});
