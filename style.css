@@ -276,6 +276,7 @@
         position: absolute;
         top: 30%;
         left: 60%;
+        transform: translate(-70%, -40%);
 
         width: 50px;
         border-radius: 100px;
