@@ -70,20 +70,64 @@ abrir.addEventListener("click", (e) => {
     }, 800);
 });
 
-document.getElementById("enviar").addEventListener("click", () => {
+const enviar = document.getElementById("enviar");
 
-    const opcao =
-        document.querySelector('input[name="opiniao"]:checked');
+if (enviar) {
 
-    const comentario =
-        document.getElementById("comentario").value;
+    enviar.addEventListener("click", async () => {
 
-    if (!opcao) {
-        alert("Escolha uma opção.");
-        return;
-    }
+        const opcao =
+            document.querySelector(
+                'input[name="opiniao"]:checked'
+            );
 
-    alert(
-        `Resposta: ${opcao.value}\nComentário: ${comentario}`
-    );
-});
+        const comentario =
+            document.getElementById("comentario").value;
+
+        if (!opcao) {
+            alert("Escolha uma opção.");
+            return;
+        }
+
+        try {
+
+            const resposta = await fetch(
+                "/feedback",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+                    body: JSON.stringify({
+                        opiniao: opcao.value,
+                        comentario
+                    })
+                }
+            );
+
+            if (resposta.ok) {
+
+                alert(
+                    "Resposta enviada 😄"
+                );
+
+            } else {
+
+                alert(
+                    "Erro ao enviar."
+                );
+
+            }
+
+        } catch {
+
+            alert(
+                "Falha na conexão."
+            );
+
+        }
+
+    });
+
+}

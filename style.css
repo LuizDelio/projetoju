@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #cartao {
     background-color: #E4D1A7;
 
@@ -122,16 +128,18 @@
 
 #cartaMsg {
 
+
     opacity: 0;
     animation: aparecer 2s ease forwards;
 
     width: 600px;
-    height: 600px;
+    max-width: 90vw;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    min-height: 600px;
+
+    position: relative;
+
+    margin: 40px auto;
 
     background-color: #E4D1A7;
 
@@ -140,7 +148,8 @@
 
     padding: 15px;
 
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+        rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 
 #tituloMsg {
@@ -155,11 +164,11 @@
 
 #ponyoCarta {
     position: absolute;
-    top: 65%;
-    left: 70%;
+    top: 70%;
+    left: 50%;
     transform: translate(-30%, -30%);
 
-    width: 350px;
+    width: 250px;
 }
 
 #ponyoDisco {
@@ -171,16 +180,15 @@
     border: 35px solid black;
 
     position: absolute;
-    top: 80%;
-    left: 5%;
+    top: 5%;
+    left: 70%;
 }
 
 #avisoEnv {
     position: absolute;
     top: 10%;
-    left: 60%;
-    transform: translate(-90%, -40%);
-    align-items: center;
+    left: 32%;
+
 }
 
 #assi {
@@ -199,14 +207,38 @@
 }
 
 #feedback {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-10%, -50%);
+    width: 600px;
+    max-width: 90vw;
 
-    padding: 15px;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.2);
+    margin: 20px auto;
+
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+
+    box-shadow: rgba(0, 0, 0, .1) 0 5px 15px;
+    font-family: 'Poppins';
+}
+
+#feedback>textarea {
+    padding: 10px;
+    border: 1px solid #870101;
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+#enviar {
+    background: #870101;
+    color: white;
+    font-weight: 800;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#enviar:hover {
+    background: #a50000;
 }
 
 #comentario {
@@ -229,12 +261,12 @@
 @keyframes aparecer {
     from {
         opacity: 0;
-        transform: translate(-50%, -45%);
+        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform: translate(-50%, -50%);
+        transform: translateY(0);
     }
 }
 
@@ -249,15 +281,33 @@
     }
 }
 
+@media (max-width: 900px) {
+
+    #feedback {
+        max-width: 500px;
+
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+
+        box-shadow: rgba(0, 0, 0, .1) 0 5px 15px;
+        font-family: 'Poppins';
+    }
+
+    #comentario {
+        width: 90%;
+    }
+
+}
+
 @media (max-width: 600px) {
     #cartaMsg {
-        width: min(90vw, 420px);
-        height: 550px;
+        width: 600px;
+        max-width: 90vw;
 
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin: 40px auto;
+
+        position: relative;
 
         background-color: #E4D1A7;
 
