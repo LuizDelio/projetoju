@@ -18,7 +18,7 @@ if (audio) {
             audio.currentTime = parseFloat(savedTime);
         }
 
-        audio.play().catch(() => {});
+        audio.play().catch(() => { });
     });
 }
 
@@ -93,25 +93,29 @@ if (enviar) {
         try {
 
             const resposta = await fetch(
-                "/feedback",
+                "https://formspree.io/f/xojzlddr",
                 {
                     method: "POST",
                     headers: {
-                        "Content-Type":
-                            "application/json"
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
                     },
                     body: JSON.stringify({
                         opiniao: opcao.value,
-                        comentario
+                        comentario: comentario
                     })
                 }
             );
 
             if (resposta.ok) {
 
-                alert(
-                    "Resposta enviada 😄"
-                );
+                alert("Resposta enviada 😄");
+
+                document.getElementById("comentario").value = "";
+
+                document
+                    .querySelectorAll('input[name="opiniao"]')
+                    .forEach(r => r.checked = false);
 
             } else {
 
