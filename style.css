@@ -301,6 +301,22 @@ body {
 }
 
 @media (max-width: 600px) {
+
+    #feedback {
+        max-width: 200px;
+
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+
+        box-shadow: rgba(0, 0, 0, .1) 0 5px 15px;
+        font-family: 'Poppins';
+    }
+
+    #comentario {
+        width: 90%;
+    }
+
     #cartaMsg {
         width: 600px;
         max-width: 90vw;
