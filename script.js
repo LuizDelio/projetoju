@@ -1,27 +1,26 @@
 const audio = document.getElementById("bgMusic");
 
-// começa a tocar após interação
-document.addEventListener("click", () => {
-    audio.play();
-}, { once: true });
+if (audio) {
 
-// salva o tempo antes de sair
-window.addEventListener("beforeunload", () => {
-    localStorage.setItem("musicTime", audio.currentTime);
-});
+    document.addEventListener("click", () => {
+        audio.play();
+    }, { once: true });
 
-window.addEventListener("load", () => {
-    const audio = document.getElementById("bgMusic");
+    window.addEventListener("beforeunload", () => {
+        localStorage.setItem("musicTime", audio.currentTime);
+    });
 
-    const savedTime = localStorage.getItem("musicTime");
+    window.addEventListener("load", () => {
 
-    if (savedTime) {
-        audio.currentTime = parseFloat(savedTime);
-    }
+        const savedTime = localStorage.getItem("musicTime");
 
-    audio.play();
-});
+        if (savedTime) {
+            audio.currentTime = parseFloat(savedTime);
+        }
 
+        audio.play().catch(() => {});
+    });
+}
 
 
 const text = document.querySelector("#cartaMsg");
@@ -59,16 +58,18 @@ window.onload = () => {
 
 const abrir = document.getElementById("abrirCarta");
 
-abrir.addEventListener("click", (e) => {
-    e.preventDefault();
+if (abrir) {
+    abrir.addEventListener("click", (e) => {
+        e.preventDefault();
 
-    document.getElementById("cartao")
-        .classList.add("abrindo");
+        document.getElementById("cartao")
+            .classList.add("abrindo");
 
-    setTimeout(() => {
-        window.location.href = "carta.html";
-    }, 800);
-});
+        setTimeout(() => {
+            window.location.href = "carta.html";
+        }, 800);
+    });
+}
 
 const enviar = document.getElementById("enviar");
 
